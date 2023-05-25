@@ -1,0 +1,18 @@
+.animeVideo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+}
+
+.animeVideo iframe {
+  width: 65.6%; 
+  height: 90%; 
+}
+
+.animeTitle {
+  margin-top: 30px;
+  margin-left: 312px;
+  font-size: 30px
+}
+
