@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useState, useImperativeHandle, forwardRef } from 'react';
 import * as userService from '../../utilities/users-service';
+import './NavBar.css';
+
 
 const NavBar = forwardRef(({ user, setUser, handleChange }, ref) => {
   const [inputVal, setInputVal] = useState('');
@@ -23,21 +25,27 @@ const NavBar = forwardRef(({ user, setUser, handleChange }, ref) => {
   }));
 
   return (
-    <nav>
-      <Link to="/">Home</Link>
-      &nbsp; | &nbsp;
-      {/* <Link to="/orders/new">New Order</Link>
-      &nbsp;&nbsp; */}
-      <span>Welcome, {user.name}</span>
-      &nbsp;&nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>
+    <nav className="navbar">
+      <Link to="/" className="navbar-link home">
+        Home
+      </Link>
+      <Link to="/discuss" className="navbar-link discussion">
+        Discussion
+      </Link>
       <div className="search">
-        <input 
-          type="text" 
-          className="navbarSearch"
-          placeholder="Search for anime"
+        <input
+          type="text"
+          className="navbar-search-input"
+          placeholder="Search"
           value={inputVal}
           onChange={handleInputChange}
         />
+      </div>
+      <div className="navbar-user">
+        <span className="welcome">Welcome, {user.name}</span>
+        <Link to="" onClick={handleLogOut} className="navbar-link navbar-link-logout">
+          Log Out
+        </Link>
       </div>
     </nav>
   );

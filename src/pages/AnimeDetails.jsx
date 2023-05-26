@@ -3,6 +3,7 @@ import { AniApi } from "../components/api";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ReactHtmlParser from 'react-html-parser';
+import "./../components/css/AnimeDetails.css"
 
 export default function AnimeDetails() {
   const [detail, setDetail] = useState([])

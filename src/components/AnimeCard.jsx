@@ -1,26 +1,6 @@
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-
 export default function AnimeCard(props) {
-  const { rec } = props;
-  const [userId, setUserId] = useState('');
-
-  function getCookie(name) {
-    const cookies = document.cookie.split(';');
-    for (let i = 0; i < cookies.length; i++) {
-      const cookie = cookies[i].trim();
-      if (cookie.startsWith(name + '=')) {
-        return cookie.substring(name.length + 1);
-      }
-    }
-    return undefined;
-  }
-
-  useEffect(() => {
-    const id = getCookie("id");
-    setUserId(id);
-  });
 
   return (
     <>

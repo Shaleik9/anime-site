@@ -3,16 +3,17 @@ import { Routes, Route } from 'react-router-dom';
 import { getUser } from '../../utilities/users-service';
 import './App.css';
 import "../../components/css/AnimeCard.css"
+import "../../components/css/AnimeStream.css"
 import AuthPage from '../AuthPage/AuthPage';
 import NavBar from '../../components/NavBar/NavBar';
 import axios from "axios";
 import { AniApi } from '../../components/api';
-import { render } from '@testing-library/react';
 import Searching from '../../components/Searching';
 import RecentAnime from '../RecentAnime';
 import PopularAnime from '../PopularAnime';
 import AnimeDetails from '../AnimeDetails';
 import AnimeStream from '../AnimeStream';
+import DiscussionPage from '../DiscussionPage';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -115,6 +116,12 @@ export default function App() {
               path="/watch/:episodeId/:animeId"
               element={
                 <AnimeStream />
+              }
+              />
+              <Route
+              path="/discuss"
+              element={
+                <DiscussionPage />
               }
               />
             

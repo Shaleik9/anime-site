@@ -3,7 +3,7 @@ import { AniApi } from "../components/api";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import React from "react";
-import Comments from "../components/Comments";
+import DiscussionPage from "./DiscussionPage";
 import "./../components/css/AnimeStream.css"
 
 
@@ -13,8 +13,9 @@ export default function AnimeStream() {
   const [player, setPlayer] = useState("");
   const [display, setDisplay] = useState(false);
   const { episodeId, animeId } = useParams();
+  const [comments, setComments] = useState([]);
 
-
+  
   const getAnimeStream = async () => {
     try {
       const animeVid = await axios.get(
@@ -22,6 +23,8 @@ export default function AnimeStream() {
       );
        setPlayer(animeVid?.data?.data?.player?.main)
        setData(animeVid?.data?.data?.plyr?.backup);
+       const response = await axios.get(`/api/discussions?episodeId=${episodeId}`);
+       setComments(response.data.discussions);
     } catch (err) {
       console.error(err);
       return { error: 'Could not show anime stream'};
@@ -96,8 +99,8 @@ export default function AnimeStream() {
             </div>
           </div>
         </div>
-            <Comments episodeId={episodeId} animeId={animeId} />
       </div>
+      <DiscussionPage />
     </>
   )
 }

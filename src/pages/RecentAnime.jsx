@@ -1,29 +1,27 @@
-import React, { useState, useRef, useEffect} from "react";
-import { Link } from "react-router-dom";
+import React, { useRef } from "react";
 import { useFetchInitialData } from "../utilities/hooks";
-import { AniApi } from "../components/api";
 import AnimeCard from "../components/AnimeCard";
 
 export default function RecentAnime(props) {
-  const renderOnCall = useRef(false);
-  const [airing, setAiring] = useState([])
-  const getAiring = async () => {
-    try {
-      const api = await fetch (`${AniApi}/meta/anilist/airing-schedule>notYetAired=true`)
-      const response = await api.json()
-      setAiring(response.results)
-    }
-    catch (error) {
-      console.log("Anime not found")
-    }
-  }
+  // const renderOnCall = useRef(false);
+  // const [airing, setAiring] = useState([])
+  // const getAiring = async () => {
+  //   try {
+  //     const api = await fetch (`${AniApi}/meta/anilist/airing-schedule>notYetAired=true`)
+  //     const response = await api.json()
+  //     setAiring(response.results)
+  //   }
+  //   catch (error) {
+  //     console.log("Anime not found")
+  //   }
+  // }
 
-  useEffect(() => {
-    if (!renderOnCall.current) {
-      getAiring()
-    }
-    renderOnCall.current = true;
-  }, []);
+  // useEffect(() => {
+  //   if (!renderOnCall.current) {
+  //     getAiring()
+  //   }
+  //   renderOnCall.current = true;
+  // }, []);
   const ref = useRef(null);
 
   const handleClick = () => {

@@ -101,6 +101,7 @@ label {
   font-size: 2vmin;
   display: flex;
   align-items: center;
+  color:white;
 }
 
 input {
@@ -121,7 +122,7 @@ button, a.button {
   margin: 1vmin;
   padding: 1vmin;
   color: var(--white);
-  background-color: var(--orange);
+  background-color: black;
   font-size: 2vmin;
   font-weight: bold;
   text-decoration: none;
@@ -144,7 +145,6 @@ button.btn-xs {
 
 button:disabled, form:invalid button[type="submit"] {
   cursor: not-allowed;
-  background-color: var(--tan-4);
 }
 
 button[type="submit"] {

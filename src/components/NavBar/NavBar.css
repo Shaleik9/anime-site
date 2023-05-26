@@ -1,0 +1,44 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.navbar-link {
+  color: white;
+  text-decoration: none;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.search {
+  width: 80%;
+  text-align: center;
+}
+
+.navbar-search-input {
+  width: 20%;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+}
+
+.welcome {
+  margin-right: 10px;
+  font-weight: bold;
+  color: white;
+}
+
+.navbar-link-logout {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+

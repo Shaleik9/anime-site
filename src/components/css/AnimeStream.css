@@ -16,3 +16,38 @@
   font-size: 30px
 }
 
+.epListContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.epList {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 950px;
+  max-height: 450px;
+  background-color: black;
+  padding: 10px 10px 10px;
+  border-radius: 14px;
+  margin-top: 20px;
+  gap: 15px;
+  overflow-y: scroll;
+}
+
+.epList button {
+  width: 50px;
+  padding: 10px;
+  margin: 10px 8px;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: black;
+  border-radius: 6px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+
+.epList button:hover {
+  background-color: red;
+}
