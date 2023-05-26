@@ -11,6 +11,11 @@ AniDote is an anime website that allows people to stream and enjoy anime content
 
 ---
 ## **Technologies Used** :
-Javascript, HTML, CSS, Flexbox
+Javascript, HTML, CSS, Flexbox, ReactJs, ExpressJs, NodeJs, MongoDB, RESTful API
 
 ## **Future Updates** :
+**Anime Playlist** - Users will be able to create a playlist to store animes they want to watch.
+
+**Marked as Seen** - Anime enjoyers can see which episodes they have already watched.
+
+**Anime filter** - Users can sort anime by their genre, popularity, and highest rated.
