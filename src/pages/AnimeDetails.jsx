@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import { AniApi } from "../components/api";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import ReactHtmlParser from 'react-html-parser';
 import "./../components/css/AnimeDetails.css"
 
 export default function AnimeDetails() {
@@ -57,7 +56,7 @@ export default function AnimeDetails() {
             )}
             <div className="animeStory">
               <div className="animeSummary">About:</div>
-              <p>{ReactHtmlParser(animeDetails.description)}</p>
+              <p dangerouslySetInnerHTML={{ __html: animeDetails.description }}></p>
             </div>
             <section className="detailContainer">
               <div className="animeEp">
