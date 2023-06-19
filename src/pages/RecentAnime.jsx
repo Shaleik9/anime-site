@@ -34,19 +34,18 @@ export default function RecentAnime(props) {
 
   return (
     <>
-      <h3>Popular Anime</h3>
+      <h3 className="categoryTitle">Popular Anime</h3>
       <div className="animeGrid">
           {props.popular.map((rec) => (
             <AnimeCard rec={rec} key={rec.id} handleClick={handleClick} />
           ))}
           </div>
-      <h2>Recent Anime</h2>
+      <h3 className="categoryTitle">Recent Anime</h3>
       <div className="animeGrid">
         {props.recent && props.recent.map((rec) => (
           <AnimeCard rec={rec} key={rec.id} handleClick={handleClick} />
         ))}
       </div>
-      
     </>
   )
 }
