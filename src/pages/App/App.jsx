@@ -13,7 +13,7 @@ import RecentAnime from '../RecentAnime';
 import PopularAnime from '../PopularAnime';
 import AnimeDetails from '../AnimeDetails';
 import AnimeStream from '../AnimeStream';
-import DiscussionPage from '../DiscussionPage';
+// import DiscussionPage from '../DiscussionPage';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -118,12 +118,12 @@ export default function App() {
                 <AnimeStream />
               }
               />
-              <Route
+              {/* <Route
               path="/discuss"
               element={
                 <DiscussionPage />
               }
-              />
+              /> */}
             
         
 
@@ -139,4 +139,3 @@ export default function App() {
     </main>
   );
 }
-

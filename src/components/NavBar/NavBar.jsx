@@ -26,11 +26,11 @@ const NavBar = forwardRef(({ user, setUser, handleChange }, ref) => {
 
   return (
     <nav className="navbar">
-      <Link to="/" className="navbar-link home">
-        Home
+      <Link to="/" id='nav-home'>
+        <span className="nav-text">Home</span>
       </Link>
-      <Link to="/discuss" className="navbar-link discussion">
-        Discussion
+      <Link to="/discuss">
+        <span className="nav-text">Discussion</span>
       </Link>
       <div className="search">
         <input
@@ -41,12 +41,10 @@ const NavBar = forwardRef(({ user, setUser, handleChange }, ref) => {
           onChange={handleInputChange}
         />
       </div>
-      <div className="navbar-user">
-        <span className="welcome">Welcome, {user.name}</span>
-        <Link to="" onClick={handleLogOut} className="navbar-link navbar-link-logout">
-          Log Out
-        </Link>
-      </div>
+      <span className="nav-text">Welcome, {user.name}</span>
+      <Link to="" onClick={handleLogOut}>
+        <span className="nav-text">Log Out</span>
+      </Link>
     </nav>
   );
 });
