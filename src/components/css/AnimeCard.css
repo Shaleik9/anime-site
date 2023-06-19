@@ -5,7 +5,7 @@
   background-position: center;
   position: relative;
   overflow: hidden;
-  margin: 20px;
+  margin: 20px 20px 20px 10px;
   border-radius: 5px;
   box-shadow: 2px 2px 5px #999;
 }
@@ -22,7 +22,7 @@
 }
 
 .animeGrid {
-  padding: 0px 30px;
+  /* padding: 10px; */
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   margin-top: 40px;
@@ -61,4 +61,32 @@
   position: relative;
   border-radius: 3px;
   color: #ffff;
+}
+
+.categoryTitle {
+  margin: 50px 10px -15px 10px;
+}
+
+@media (max-width: 768px) {
+  .animeGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .animeGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .animeGrid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1441px) {
+  .animeGrid {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }

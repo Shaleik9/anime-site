@@ -3,7 +3,7 @@ import { AniApi } from "../components/api";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import React from "react";
-import DiscussionPage from "./DiscussionPage";
+// import DiscussionPage from "./DiscussionPage";
 import "./../components/css/AnimeStream.css"
 
 
@@ -13,9 +13,9 @@ export default function AnimeStream() {
   const [player, setPlayer] = useState("");
   const [display, setDisplay] = useState(false);
   const { episodeId, animeId } = useParams();
-  const [comments, setComments] = useState([]);
+  // const [comments, setComments] = useState([]);
 
-  
+
   const getAnimeStream = async () => {
     try {
       const animeVid = await axios.get(
@@ -23,22 +23,21 @@ export default function AnimeStream() {
       );
        setPlayer(animeVid?.data?.data?.player?.main)
        setData(animeVid?.data?.data?.plyr?.backup);
-       const response = await axios.get(`/api/discussions?episodeId=${episodeId}`);
-       setComments(response.data.discussions);
+      //  const response = await axios.get(`/api/discussions?episodeId=${episodeId}`);
+      //  setComments(response.data.discussions);
     } catch (err) {
       console.error(err);
       return { error: 'Could not show anime stream'};
     }
   }
-  
+
   const handleDisplay = () => {
     setDisplay(false);
   }
-  
+
   const handlePlayer = () => {
     setDisplay(true)
   }
-
   const getAnimeDetails = async () => {
     try {
       const api = await fetch(`${AniApi}/meta/anilist/info/${animeId}`)
@@ -49,12 +48,11 @@ export default function AnimeStream() {
       return { error: 'Could not show anime details'};
     }
   }
-
   useEffect(() => {
     getAnimeDetails();
     getAnimeStream();
+    // eslint-disable-next-line
   }, [animeId, episodeId]);
-
   return (
     <>
       <div className="animeStream" key={episodeId}>
@@ -71,6 +69,7 @@ export default function AnimeStream() {
               {display ? (
                 <iframe
                   src={player}
+                  frameBorder="0"
                   allowFullScreen="allowfullscreen"
                   title={episodeId}
                   allow="picture-in-picture"
@@ -100,8 +99,7 @@ export default function AnimeStream() {
           </div>
         </div>
       </div>
-      <DiscussionPage />
+      {/* <DiscussionPage /> */}
     </>
   )
 }
-
